@@ -1,0 +1,159 @@
+.login-page {
+  background-image: url(C:\Users\wwwbi\test-app\public\background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login-form {
+  width: 350px;
+  height: 450px;
+  font-size:x-large;
+  color: #fff; 
+  margin-right: 40px;
+  padding: 30px;
+  background-color: #0071ba;
+  display:table-column;
+  border-radius: 10px;
+}
+
+.login-form .logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 40px;
+}
+
+img{
+  margin-left: 250px;
+  height: 50px;
+  width: 250px;
+}
+
+.formUsername {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  outline-width: 4px;
+}
+
+.formUsername .icon {
+  margin-right: 10px;
+}
+
+.formUsername input {
+  padding-left: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  height: 35px;
+  width: 230px;
+}
+
+.formUsername:hover input {
+  border-color: #ffb455;
+  border-width: 2.5px;
+}
+
+.formUsername input:focus {
+  border-color: #ffb455;
+  border-width: 2.5px;
+  outline: none;
+}
+
+.login-form .formPassword {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.formPassword .icon {
+  margin-right: 10px;
+}
+
+.formPassword input {
+  padding-left: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  height: 35px;
+  width: 230px;
+}
+
+.formPassword:hover input {
+  border-color: #ffb455;
+  border-width: 2.5px;
+}
+
+.formPassword input:focus {
+  border-color: #ffb455;
+  border-width: 2.5px;
+  outline: none;
+}
+
+.btn-primary {
+  background-color:#185ba8;
+  color:#fff;
+  font-size:medium;
+  border: none;
+  margin-left: 15px;
+  margin-top: 20px;
+  height: 35px;
+  width: 260px;
+}
+
+.btn-primary:hover {
+  background-color: #e3b123;
+}
+
+.error {
+  color: yellow;
+  font-size: medium;
+  margin-top: 10px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 60px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #666;
+}
+
+nav img {
+  height: 20px;
+  width: 20px;
+}
