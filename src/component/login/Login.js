@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
 import PersonIcon from '@mui/icons-material/Person';
 import LockIcon from '@mui/icons-material/Lock';
-import dataLogin from "./dataLogin.js";
-import "./login.css";
+import findUser from '../../service/loginService';
+import "../../css/login.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const user = dataLogin.find((user) => user.username === username);
+    const user = findUser(username) 
 
     if (!user) {
       setError("Username không tồn tại");
@@ -22,6 +24,7 @@ const Login = () => {
     } else {
       setError("");
       console.log("Đăng nhập thành công");
+      navigate('/hose');
     }
   };
 
@@ -50,7 +53,7 @@ const Login = () => {
           <nav>
             <ul>
               <li><a href="/guide">Guideline</a></li>
-              <li><a href="/prb">Priceboard</a></li>
+              <li><a href="/hose">Priceboard</a></li>
               <li><a href="/analytic">Market Analytic</a></li>
               <li><a href="/ibonds">IBonds</a></li>
               <li><a href="/account">Account manage</a></li>

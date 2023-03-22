@@ -1,5 +1,5 @@
 .login-page {
-  background-image: url(C:\Users\wwwbi\test-app\public\background.jpg);
+  background-image: url("../../public/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
