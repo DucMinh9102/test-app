@@ -1,0 +1,93 @@
+table {
+  width: 1943px;
+  border-collapse: collapse;
+}
+
+.col-up {
+  display: table-column-group;
+}
+
+.col-bot {
+  background-color: #3b3b3b;
+  color: #fff;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.col-bot2 {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+thead {
+  display: table-header-group;
+}
+
+th {
+  border: 1px solid #fff;
+  padding: 0 3px;
+  height: 58px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.symbol {
+  width: 55.29px;
+  height: 58px;
+}
+
+.ref {
+  width: 55.29px;
+  height: 58px;
+}
+
+.ceil {
+  width: 55.29px;
+  height: 58px;
+}
+
+.floor {
+  width: 55.29px;
+  height: 58px;
+}
+
+.bid {
+  width: 331.74px;
+  height: 58px;
+}
+
+.matched {
+  width: 165.87px;
+  height: 58px;
+}
+
+.ask {
+  width: 331.74px;
+  height: 58px;
+}
+
+.t-vol {
+  width: 55.29px;
+  height: 58px;
+}
+
+.prices {
+  width: 165.87px;
+  height: 58px;
+}
+
+.remain {
+  width: 110.58px;
+  height: 58px;
+}
+
+.foreign {
+  width: 110.58px;
+  height: 58px;
+}

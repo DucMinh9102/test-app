@@ -1,4 +1,4 @@
-import dataLogin from "../component/login/dataLogin.js";
+import dataLogin from "../Data/dataLogin.js";
 
 const findUser = (username) => {
   return dataLogin.find((user) => user.username === username);
