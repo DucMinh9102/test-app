@@ -17,7 +17,7 @@ function Header() {
                 <p>Dòng chữ chạy</p>
             </div>
             <div className="button">
-                <Button className="btn btn-primary">Login</Button>
+                    <Button type="submit" className="btn btn-primary">Logout</Button>   
             </div>
             <div className="dropDown">
             <button class="btn btn-secondary dropdown-toggle" type="button">Dropdown</button> 

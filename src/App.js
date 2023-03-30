@@ -1,17 +1,38 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './component/login/Login';
-import HOSE from './component/HOSE/HOSE';
-import HNX from './component/HNX/HNX';
-import Layout from './component/layout/Layout';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { publicRoutes, privateRoutes } from './component/Routes/index';
+import MainLayout from './component/MainLayout/Layout';
+import  LoginReducer  from "./service/authService";
 
-const App = () => {
+function PrivateRoutes({ children }) {
+  const isLoggedIn = LoginReducer();
+
+  return isLoggedIn ? children : <Navigate to="/" replace />;
+}
+
+function App() {
   return (
     <Router>
         <div className="App">
             <Routes>
-                <Route path="/" element={<Login />} />
-                <Route path="/hose" element={<Layout><HOSE /></Layout>} />
-                <Route path="/hnx" element={<Layout><HNX /></Layout>} />
+                { publicRoutes.map((route, index) => {
+                  const Page = route.component;
+                   return <Route key={index} path={route.path} element={
+                      <Page />
+                   } /> 
+                })
+                }
+                  { privateRoutes.map((route, index) => {
+                    const Layout = MainLayout;
+                    const Page = route.component;
+                    return <Route key={index} path={route.path} element={
+                      <PrivateRoutes>
+                      <Layout>
+                        <Page />
+                      </Layout>
+                      </PrivateRoutes>  
+                    } />
+                  })
+                  }
             </Routes>
         </div>
     </Router>

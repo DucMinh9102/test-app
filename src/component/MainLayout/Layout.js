@@ -2,7 +2,7 @@ import Header from './Header';
 import Table from './Table';
 import Footer from './Footer';
 
-function Layout( {children} ) {
+function MainLayout( {children} ) {
     return(
         <div>
             <Header />
@@ -15,4 +15,4 @@ function Layout( {children} ) {
     )
 }
 
-export default Layout;
+export default MainLayout;

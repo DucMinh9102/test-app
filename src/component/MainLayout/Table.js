@@ -4,7 +4,7 @@ import '../../css/Table.css';
 function Table() {
     return (
         <table>
-            <colgroup className="col-up">
+            <colgroup>
             <col className="symbol" />
             <col className="ref" />
             <col className="ceil"/>
@@ -18,7 +18,7 @@ function Table() {
             <col className="foreign"/>
             </colgroup>
             <thead>
-            <tr className="col-bot">
+            <tr>
                 <th className="symbol" colSpan={1} rowSpan={2}>Symbol</th>
                 <th className="ref" colSpan={1} rowSpan={2}>Ref</th>
                 <th className="ceil" colSpan={1} rowSpan={2}>Ceil</th>
@@ -26,12 +26,12 @@ function Table() {
                 <th className="bid" colSpan={6} rowSpan={1}>Bid</th>
                 <th className="matched" colSpan={3} rowSpan={1}>Matched</th>
                 <th className="ask" colSpan={6} rowSpan={1}>Ask</th>
-                <th className="t-vol" colSpan={2} rowSpan={2}>T-vol</th>
+                <th className="t-vol" colSpan={1} rowSpan={2}>T-vol</th>
                 <th className="prices" colSpan={3} rowSpan={1}>Prices</th>
                 <th className="remain" colSpan={2} rowSpan={1}>Remain</th>
                 <th className="foreign" colSpan={2} rowSpan={1}>Foreign</th>
             </tr>
-            <tr className="col-bot2">
+            <tr>
                 <th className="bid-price3" colSpan={1} rowSpan={1}>Prc 3</th>
                 <th className="bid-vol3" colSpan={1} rowSpan={1}>Vol 3</th>
                 <th className="bid-price2" colSpan={1} rowSpan={1}>Prc 2</th>
@@ -47,6 +47,13 @@ function Table() {
                 <th className="ask-vol2" colSpan={1} rowSpan={1}>Vol 2</th>
                 <th className="ask-prc3" colSpan={1} rowSpan={1}>Prc 3</th>
                 <th className="ask-vol3" colSpan={1} rowSpan={1}>Vol 3</th>
+                <th className="prices-high" colSpan={1} rowSpan={1}>High</th>
+                <th className="prices-avg" colSpan={1} rowSpan={1}>Avg</th>
+                <th className="prices-low" colSpan={1} rowSpan={1}>Low</th>
+                <th className="remain-bid" colSpan={1} rowSpan={1}>Bid</th>
+                <th className="remain-ask" colSpan={1} rowSpan={1}>Ask</th>
+                <th className="foreign-bought" colSpan={1} rowSpan={1}>Bought</th>
+                <th className="foreign-sold" colSpan={1} rowSpan={1}>Sold</th>
             </tr>
             </thead>
         </table>

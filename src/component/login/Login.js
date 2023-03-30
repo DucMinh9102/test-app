@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { login } from "../Redux/Action";
+import  LoginReducer  from "../../service/authService";
 import PersonIcon from '@mui/icons-material/Person';
 import LockIcon from '@mui/icons-material/Lock';
 import findUser from '../../service/loginService';
@@ -12,7 +15,11 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  const isLoggedIn = LoginReducer();
+  const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
+    console.log(username,password);
     e.preventDefault();
 
     const user = findUser(username) 
@@ -22,8 +29,8 @@ const Login = () => {
     } else if (user.password !== password) {
       setError("Pass không đúng");
     } else {
-      setError("");
       console.log("Đăng nhập thành công");
+      dispatch(login());
       navigate('/hose');
     }
   };
@@ -44,7 +51,9 @@ const Login = () => {
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </div>
 
-      <Button type="submit" className="btn btn-primary">Login</Button>
+      {!isLoggedIn && (
+        <Button type="submit" className="btn btn-primary">Login</Button>  
+      )}
 
       {error && <p className="error">{error}</p>}
       </Form>

@@ -1,37 +1,25 @@
 table {
   width: 1943px;
   border-collapse: collapse;
+  font-size: 12px;
+  margin-top: 0px;
 }
 
-.col-up {
+colgroup {
   display: table-column-group;
 }
 
-.col-bot {
-  background-color: #3b3b3b;
-  color: #fff;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
-.col-bot2 {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
 thead {
-  display: table-header-group;
+  display: table-cell;
+  position: fixed;
+  color:#fff;
+  background: rgba(30, 30, 30, 0.85);
+  box-shadow: 0 4px 10px rgb(0 0 0 / 40%);
 }
 
 th {
   border: 1px solid #fff;
   padding: 0 3px;
-  height: 58px;
-  display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -59,35 +47,36 @@ th {
 
 .bid {
   width: 331.74px;
-  height: 58px;
+  height: 29px;
 }
 
 .matched {
   width: 165.87px;
-  height: 58px;
+  height: 29px;
 }
 
 .ask {
   width: 331.74px;
-  height: 58px;
+  height: 29px;
 }
 
 .t-vol {
-  width: 55.29px;
+  width: 110.58px;
   height: 58px;
 }
 
 .prices {
   width: 165.87px;
-  height: 58px;
+  height: 29px;
 }
 
 .remain {
   width: 110.58px;
-  height: 58px;
+  height: 29px;
 }
 
 .foreign {
   width: 110.58px;
-  height: 58px;
+  height: 29px;
 }
+
