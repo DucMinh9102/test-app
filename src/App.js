@@ -5,7 +5,7 @@ import  LoginReducer  from "./service/authService";
 
 function PrivateRoutes({ children }) {
   const isLoggedIn = LoginReducer();
-
+  console.log(isLoggedIn);
   return isLoggedIn ? children : <Navigate to="/" replace />;
 }
 

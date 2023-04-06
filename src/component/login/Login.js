@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from "react-redux";
-import { login } from "../Redux/Action";
+import { login } from "../Redux/Action/loginAction";
 import  LoginReducer  from "../../service/authService";
 import PersonIcon from '@mui/icons-material/Person';
 import LockIcon from '@mui/icons-material/Lock';
@@ -19,7 +19,6 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
-    console.log(username,password);
     e.preventDefault();
 
     const user = findUser(username) 
@@ -54,7 +53,6 @@ const Login = () => {
       {!isLoggedIn && (
         <Button type="submit" className="btn btn-primary">Login</Button>  
       )}
-
       {error && <p className="error">{error}</p>}
       </Form>
     </div>

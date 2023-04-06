@@ -10,7 +10,7 @@ function MainLayout( {children} ) {
             <Table />
             <div className="content">{children}</div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

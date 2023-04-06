@@ -1,5 +1,6 @@
 header {
-    width: 1493px;
+  position: absolute;
+    width: 100%;
     height: 90px;
 }
 
@@ -13,7 +14,7 @@ header {
     align-items: center;
     justify-content:first baseline;
     background-color: #3b3b3b;
-    width: 1493px;
+    width: 100%;
     height: 43px;
 }
 
@@ -34,18 +35,18 @@ header {
 
 .running-text {
     color: #dfdfdf;
+    display: flex;
     flex-grow: 1;
     font-size: 12px;
     overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
   }
 
-.running-text p {
-    display: inline-block;
+.running-text div {
     width:100%;
+    display:inline-block;
+    position: relative;
     animation: running-text 10s linear infinite;
-    
 }
 
 @keyframes running-text {
@@ -67,33 +68,15 @@ header {
 
 .botHeader {
     display: flex;
-    align-items: center;
-    justify-content:first baseline;
+    align-items: flex-end;
     background-color: #232323;
     width: 1493px;
     height: 37px;
 }
 
-.botHeader .listMenu {
-    height: 30px;
-}
-
-.botHeader .btnHose {
-    display:inline-block;
-    background-color: #3b3b3b;
-    color: #fff;
-    height: 30px;
-    width: 60px;
-    margin-bottom: 0;
-
-}
-
-.btnHose:hover {
-    background-color: #185ba8;  
-}
-
 .botHeader .btnHnx {
     background-color: #3b3b3b;
+    align-items:flex;
     color: #fff;
     height: 30px;
     width: 60px;
@@ -104,4 +87,30 @@ header {
 
 .btnHnx:hover {
     background-color: #185ba8;  
+}
+
+.botHeader .dropdown {
+    background-color: #3b3b3b;
+    align-items: center;
+    list-style-type: none;
+    height: 30px;
+    width: 60px;
+    margin-right: 4px;
+    z-index: 2;
+  }
+  
+.botHeader .dropdown:hover {
+    background-color: #185ba8; 
+  }
+  
+.dropdown-item {
+    background-color: #3b3b3b;
+    display:list-item;
+    color-scheme: #fff;
+    height: 30px;
+    width: 60px;
+  }
+  
+.dropdown-item:hover {
+  background-color: #185ba8;
 }

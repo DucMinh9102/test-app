@@ -2,14 +2,10 @@ table {
   width: 1943px;
   border-collapse: collapse;
   font-size: 12px;
-  margin-top: 0px;
-}
-
-colgroup {
-  display: table-column-group;
 }
 
 thead {
+  margin-top: 80px;
   display: table-cell;
   position: fixed;
   color:#fff;
@@ -30,7 +26,7 @@ th {
   height: 58px;
 }
 
-.ref {
+.reference {
   width: 55.29px;
   height: 58px;
 }
@@ -80,3 +76,8 @@ th {
   height: 29px;
 }
 
+tbody {
+  display: table;
+  background-color: #3b3b3b;
+  color: #fff;
+}
