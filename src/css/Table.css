@@ -1,19 +1,21 @@
 table {
-  width: 1943px;
+  max-width: 1528px;
+  display: flex;
   border-collapse: collapse;
   font-size: 12px;
 }
 
 thead {
+  width: 100%;
   margin-top: 80px;
-  display: table-cell;
+  table-layout: fixed;
   position: fixed;
   color:#fff;
   background: rgba(30, 30, 30, 0.85);
-  box-shadow: 0 4px 10px rgb(0 0 0 / 40%);
 }
 
 th {
+  width: 100%;
   border: 1px solid #fff;
   padding: 0 3px;
   text-align: center;
@@ -21,63 +23,183 @@ th {
   justify-content: center;
 }
 
-.symbol {
-  width: 55.29px;
-  height: 58px;
-}
-
-.reference {
-  width: 55.29px;
-  height: 58px;
-}
-
-.ceil {
-  width: 55.29px;
-  height: 58px;
-}
-
-.floor {
-  width: 55.29px;
+thead .symbol, .reference, .ceil, .floor{
+  width: 54.5px;
   height: 58px;
 }
 
 .bid {
-  width: 331.74px;
+  width: 327px;
   height: 29px;
 }
 
+thead .bid-price3, .bid-price2, .bid-price1, .bid-vol3, .bid-vol2, .bid-vol1, .mat-price, .mat-vol,
+.mat-percent, .ask-prc1, .ask-prc2, .ask-prc3, .ask-vol1, .ask-vol2, .ask-vol3, .prices-high, 
+.prices-low, .prices-avg, .remain-bid, .remain-ask, .foreign-bought, .foreign-sold {
+  width: 54.5px;
+  height: 29px;
+  color: #fff;
+}
+
 .matched {
-  width: 165.87px;
+  width: 163.5px;
   height: 29px;
 }
 
 .ask {
-  width: 331.74px;
+  width: 327px;
   height: 29px;
 }
 
 .t-vol {
-  width: 110.58px;
+  width: 109px;
   height: 58px;
 }
 
 .prices {
-  width: 165.87px;
+  width: 163.5px;
   height: 29px;
 }
 
 .remain {
-  width: 110.58px;
+  width: 109px;
   height: 29px;
 }
 
 .foreign {
-  width: 110.58px;
+  width: 109px;
   height: 29px;
 }
 
 tbody {
-  display: table;
-  background-color: #3b3b3b;
+  width: 100%;
+  table-layout: fixed;
+  display: table-row-group;
+  border-collapse:collapse;
+  position:initial;
+  margin-top: 138px;
+  background-color: black;
   color: #fff;
+}
+
+tbody tr {
+  table-layout: fixed;
+  display: table-cell-group;
+  border: 1px solid #fff;
+}
+
+tbody td {
+  width:100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+}
+
+tbody tr .bid-price3, .bid-price2, .bid-price1, .bid-vol3, .bid-vol2, .bid-vol1, .mat-price, .mat-vol,
+.mat-percent, .ask-prc1, .ask-prc2, .ask-prc3, .ask-vol1, .ask-vol2, .ask-vol3, .prices-high, 
+.prices-low, .prices-avg, .remain-bid, .remain-ask, .foreign-bought, .foreign-sold {
+  width: 54.5px;
+  height: 29px;
+}
+
+tbody tr .bid-price3{
+  color: green;
+}
+
+tbody tr .bid-price2{
+  color: green;
+}
+
+tbody tr .bid-price1{
+  color: green;
+}
+
+tbody tr .bid-vol3{
+  color: green;
+}
+
+tbody tr .bid-vol2{
+  color: green;
+}
+
+tbody tr .bid-vol1{
+  color: green;
+}
+
+tbody tr .mat-price{
+  color: green;
+}
+
+tbody tr .mat-vol{
+  color: green;
+}
+
+tbody tr .mat-percent{
+  color: green;
+}
+
+tbody tr .ask-prc1{
+  color: green;
+}
+
+tbody tr .ask-prc2{
+  color: green;
+}
+
+tbody tr .ask-prc3{
+  color: green;
+}
+
+tbody tr .ask-vol1{
+  color: green;
+}
+
+tbody tr .ask-vol2{
+  color: green;
+}
+
+tbody tr .ask-vol3{
+  color: green;
+}
+
+tbody tr .prices-high{
+  color: green;
+}
+
+tbody tr .prices-low{
+  color: green;
+}
+
+tbody tr .prices-avg{
+  color: green;
+}
+
+tbody tr .symbol{
+  width: 54.5px;
+  height: 29px;
+  color: green;
+}
+
+tbody tr .t-vol {
+  width: 109px;
+  height: 29px;
+}
+
+tbody tr .reference {
+  width: 54.5px;
+  height: 29px;
+  color: #ffd900;
+}
+
+tbody tr .ceil {
+  width: 54.5px;
+  height: 29px;
+  color: #ff25ff;
+}
+
+tbody .floor {
+  width: 54.5px;
+  height: 29px;
+  color: #1eeeee;
 }

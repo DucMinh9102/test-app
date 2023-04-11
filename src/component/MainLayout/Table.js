@@ -3,25 +3,49 @@ import dataHNX from '../../Data/dataHNX.json';
 import dataVN30 from '../../Data/dataVN30.json';
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+
 import '../../css/Table.css';
-//thay 2 table thành 1 hàm rồi làm 1 bảng rồi thay data
+//chọn 20 mã đầu random dòng thay đổi => tổng cột dữ liệu là 15 cột => random số lượng cột thay đổi => random thứ tự cột thay đổi
+//Data random
 
 function Table() {
   const [data, setData] = useState([]);
+  const [highlight, setHighlight] = useState([]);
   const location = useLocation();
-  
+
   useEffect(() => {
-    if (location.pathname === "/hose") {
-      setData(dataHOSE);
-    } else if (location.pathname === "/hnx") {
-      setData(dataHNX);
-    } else if (location.pathname === "/vn30") {
-      setData(dataVN30);
-    } else {
-      setData([]);
-    }
-    console.log(data);
+    const interval = setInterval(() => {
+
+      const randomRows = [];
+      let countRow = 0;
+      while (countRow < Math.floor(Math.random() * 7 ) + 1) {
+        const randomRow = Math.floor(Math.random() * 20);
+        if (!randomRows.includes(randomRow)) {
+          randomRows.push(randomRow);
+          countRow++;
+        }
+      }
+      setHighlight(randomRows);
+      setTimeout(() => {
+        setHighlight([]);
+      }, 2000);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+      if (location.pathname === "/hose") {
+        setData(dataHOSE && dataHOSE.d);
+      } else if (location.pathname === "/hnx") {
+        setData(dataHNX && dataHNX.d);
+      } else if (location.pathname === "/vn30") {
+        setData(dataVN30 && dataVN30.d);
+      } else {
+        setData([]);
+      }
+      console.log(data);
   }, [data, location.pathname]);
+
   return (
     <table>
       <thead>
@@ -62,37 +86,38 @@ function Table() {
           <th className="foreign-bought" colSpan={1} rowSpan={1}>Bought</th>
           <th className="foreign-sold" colSpan={1} rowSpan={1}>Sold</th>
         </tr>
-      </thead>
+      </thead>  
       <tbody>
-        {Array.isArray(data) && data.map((row) => (
-          <tr key={row.symbol}>
+        {Array.isArray(data) && data.map((row, index) => (
+          <tr key={row.symbol} style={{
+            backgroundColor: highlight.includes(index) ? "green" : "",}}>
             <td className="symbol">{row.symbol}</td>
-            <td className="reference">{row.reference}</td>
-            <td className="ceil">{row.ceiling}</td>
-            <td className="floor">{row.floor}</td>
-            <td className="bid-price3">{row.bidPrice3}</td>
-            <td className="bid-vol3">{row.bidVol3}</td>
-            <td className="bid-price2">{row.bidPrice2}</td>
-            <td className="bid-vol2">{row.bidVol2}</td>
-            <td className="bid-price1">{row.bidPrice1}</td>
-            <td className="bid-vol1">{row.bidVol1}</td>
-            <td className="mat-price">{row.closePrice}</td>
-            <td className="mat-vol">{row.closeVol}</td>
-            <td className="mat-percent">{row.changPercent}</td>
-            <td className="ask-prc1">{row.offerPrice1}</td>
-            <td className="ask-vol1">{row.offerVol1}</td>
-            <td className="ask-prc2">{row.offerPrice2}</td>
-            <td className="ask-vol2">{row.offerVol2}</td>
-            <td className="ask-prc3">{row.offerPrice3}</td>
-            <td className="ask-vol3">{row.offerVol3}</td>
+            <td className="reference">{(row.reference / 1000).toFixed(2)}</td>
+            <td className="ceil">{(row.ceiling / 1000).toFixed(2)}</td>
+            <td className="floor">{(row.floor / 1000).toFixed(2)}</td>
+            <td className="bid-price3">{(row.bidPrice3 / 1000).toFixed(2)}</td>
+            <td className="bid-vol3">{(row.bidVol3 / 1000).toFixed(2)}</td>
+            <td className="bid-price2">{(row.bidPrice2 / 1000).toFixed(2)}</td>
+            <td className="bid-vol2">{(row.bidVol2 / 1000).toFixed(2)}</td>
+            <td className="bid-price1">{(row.bidPrice1 / 1000).toFixed(2)}</td>
+            <td className="bid-vol1">{(row.bidVol1 / 1000).toFixed(2)}</td>
+            <td className="mat-price">{(row.closePrice / 1000).toFixed(2)}</td>
+            <td className="mat-vol">{(row.closeVol / 1000).toFixed(2)}</td>
+            <td className="mat-percent">{(row.changePercent).toFixed(2)}</td>
+            <td className="ask-prc1">{(row.offerPrice1 / 1000).toFixed(2)}</td>
+            <td className="ask-vol1">{(row.offerVol1 / 1000).toFixed(2)}</td>
+            <td className="ask-prc2">{(row.offerPrice2 / 1000).toFixed(2)}</td>
+            <td className="ask-vol2">{(row.offerVol2 / 1000).toFixed(2)}</td>
+            <td className="ask-prc3">{(row.offerPrice3 / 1000).toFixed(2)}</td>
+            <td className="ask-vol3">{(row.offerVol3 / 1000).toFixed(2)}</td>
             <td className="t-vol">{row.totalTrading}</td>
-            <td className="prices-high">{row.high}</td>
-            <td className="prices-avg">{row.averagePrice}</td>q
-            <td className="prices-low">{row.low}</td>
+            <td className="prices-high">{(row.high / 1000).toFixed(2)}</td>
+            <td className="prices-avg">{(row.open / 1000).toFixed(2)}</td>
+            <td className="prices-low">{(row.low / 1000).toFixed(2)}</td>
             <td className="remain-bid">{row.priceOne}</td>
             <td className="remain-ask">{row.priceTwo}</td>
-            <td className="foreign-bought">{row.foreignBuy}</td>
-            <td className="foreign-sold">{row.foreignSell}</td>
+            <td className="foreign-bought">{(row.foreignBuy / 1000).toFixed(2)}</td>
+            <td className="foreign-sold">{(row.foreignSell / 1000).toFixed(2)}</td>
           </tr>
         ))}
       </tbody>

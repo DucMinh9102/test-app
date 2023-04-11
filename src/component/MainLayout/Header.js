@@ -22,7 +22,7 @@ function Header() {
         } else if (location.pathname === "/vn30") {
             setDropdownTitle("VN30");
         } else {
-            setDropdownTitle("HOSE");
+            setDropdownTitle("HOSE");   
         }
     }, [location]);
 

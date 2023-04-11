@@ -1,6 +1,6 @@
 import Header from './Header';
 import Table from './Table';
-import Footer from './Footer';
+// import Footer from './Footer';
 
 function MainLayout( {children} ) {
     return(
