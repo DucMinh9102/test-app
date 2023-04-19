@@ -9,9 +9,11 @@ thead {
   width: 100%;
   margin-top: 80px;
   table-layout: fixed;
+  display: table-column-group;
   position: fixed;
   color:#fff;
   background: rgba(30, 30, 30, 0.85);
+  z-index: -1;
 }
 
 th {
@@ -74,17 +76,17 @@ thead .bid-price3, .bid-price2, .bid-price1, .bid-vol3, .bid-vol2, .bid-vol1, .m
 tbody {
   width: 100%;
   table-layout: fixed;
-  display: table-row-group;
+  display: table-cell-group;
   border-collapse:collapse;
   position:initial;
   margin-top: 138px;
   background-color: black;
   color: #fff;
+  z-index: -2;
 }
 
 tbody tr {
   table-layout: fixed;
-  display: table-cell-group;
   border: 1px solid #fff;
 }
 
@@ -103,82 +105,9 @@ tbody tr .bid-price3, .bid-price2, .bid-price1, .bid-vol3, .bid-vol2, .bid-vol1,
   height: 29px;
 }
 
-tbody tr .bid-price3{
-  color: green;
-}
-
-tbody tr .bid-price2{
-  color: green;
-}
-
-tbody tr .bid-price1{
-  color: green;
-}
-
-tbody tr .bid-vol3{
-  color: green;
-}
-
-tbody tr .bid-vol2{
-  color: green;
-}
-
-tbody tr .bid-vol1{
-  color: green;
-}
-
-tbody tr .mat-price{
-  color: green;
-}
-
-tbody tr .mat-vol{
-  color: green;
-}
-
-tbody tr .mat-percent{
-  color: green;
-}
-
-tbody tr .ask-prc1{
-  color: green;
-}
-
-tbody tr .ask-prc2{
-  color: green;
-}
-
-tbody tr .ask-prc3{
-  color: green;
-}
-
-tbody tr .ask-vol1{
-  color: green;
-}
-
-tbody tr .ask-vol2{
-  color: green;
-}
-
-tbody tr .ask-vol3{
-  color: green;
-}
-
-tbody tr .prices-high{
-  color: green;
-}
-
-tbody tr .prices-low{
-  color: green;
-}
-
-tbody tr .prices-avg{
-  color: green;
-}
-
-tbody tr .symbol{
+tbody tr .symbol {
   width: 54.5px;
   height: 29px;
-  color: green;
 }
 
 tbody tr .t-vol {
